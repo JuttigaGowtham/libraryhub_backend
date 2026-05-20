@@ -23,6 +23,10 @@ app.use('/api/borrowings', require('./routes/borrowings'));
 app.use('/api/members', require('./routes/members'));
 app.use('/api/progress', require('./routes/progress'));
 
+app.get('/', (req, res) => {
+  res.json({ message: 'LibraryHub API is running successfully!' });
+});
+
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
